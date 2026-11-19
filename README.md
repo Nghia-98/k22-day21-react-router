@@ -1,5 +1,7 @@
 # Day 21 - React Router Mini Shop
 
+Demo: [https://k22-day21-react-router.vercel.app/products](https://k22-day21-react-router.vercel.app/products)
+
 Website E-commerce đơn giản dùng `react-router`: trang chủ, danh sách sản phẩm
 có tìm kiếm/lọc theo danh mục (lưu trên query string), trang chi tiết sản
 phẩm theo route động, và trang 404.
@@ -11,21 +13,16 @@ npm install
 npm run dev      # chạy dev server
 npm run build    # build production ra dist/
 npm run preview  # xem thử bản build
+```
 
+## Routing structure
 
-# React + Vite
+- `/` — `HomePage`: giới thiệu ngắn, nút xem sản phẩm.
+- `/products` — `ProductsPage`: danh sách sản phẩm, tìm theo tên (`?keyword=`)
+  và lọc theo danh mục (`?category=`) qua `useSearchParams`.
+- `/products/:productId` — `ProductDetailPage`: chi tiết 1 sản phẩm theo ID
+  trên URL (`useParams`); báo "không tồn tại" nếu ID sai.
+- `*` — `NotFoundPage`: trang 404 cho mọi route không khai báo.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Tất cả route trên đều lồng (nested) dưới `Layout` (`src/components/Layout.jsx`)
+— header + nav dùng chung, nội dung từng trang render vào `<Outlet />`.
