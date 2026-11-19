@@ -1,3 +1,18 @@
+# Day 21 - React Router Mini Shop
+
+Website E-commerce đơn giản dùng `react-router`: trang chủ, danh sách sản phẩm
+có tìm kiếm/lọc theo danh mục (lưu trên query string), trang chi tiết sản
+phẩm theo route động, và trang 404.
+
+## Cài đặt & chạy dự án
+
+```bash
+npm install
+npm run dev      # chạy dev server
+npm run build    # build production ra dist/
+npm run preview  # xem thử bản build
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
