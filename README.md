@@ -1,5 +1,7 @@
 # Day 21 - React Router Mini Shop
 
+Repo: [https://github.com/Nghia-98/k22-day21-react-router](https://github.com/Nghia-98/k22-day21-react-router)
+
 Demo: [https://k22-day21-react-router.vercel.app/products](https://k22-day21-react-router.vercel.app/products)
 
 Website E-commerce đơn giản dùng `react-router`: trang chủ, danh sách sản phẩm
